@@ -29,4 +29,4 @@ To run this application on your machine, you need at least:
 Then you'll need to create the database and initialize schema:
 
     echo 'CREATE DATABASE link' | mysql -u root
-    cat Schemas/link.sql | mysql -u root link
+    cat Schema/link.sql | mysql -u root link
