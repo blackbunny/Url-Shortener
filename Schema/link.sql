@@ -34,8 +34,7 @@ CREATE TABLE IF NOT EXISTS `counts` (
   `visitor_ip` varchar(15) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `links_id` (`links_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8_unicode_ci AUTO_INCREMENT=3 ;
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=5 ;
 -- --------------------------------------------------------
 
 --
@@ -48,8 +47,7 @@ CREATE TABLE IF NOT EXISTS `links` (
   `longurl` text CHARACTER SET utf8 COLLATE utf8_unicode_ci,
   `visitor_count` int(11) unsigned NOT NULL DEFAULT '0',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8_unicode_ci AUTO_INCREMENT=15 ;
-
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=5 ;
 --
 -- Constraints for dumped tables
 --
