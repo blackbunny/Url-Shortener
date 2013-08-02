@@ -1,0 +1,56 @@
+<?php echo \Phalcon\Tag::form("counts/create") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("counts", "Go Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton("Save") ?></td>
+    <tr>
+</table>
+
+<?php echo $this->getContent(); ?>
+
+<div align="center">
+    <h1>Create counts</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+            </td>
+            <td align="left">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="links_id">Links</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("links_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="value">Value</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("value", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="visit_date">Visit Of Date</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("visit_date", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="visitor_ip">Visitor Of Ip</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("visitor_ip", "size" => 30)) ?>
+            </td>
+        </tr>
+    </table>
+<?php echo \Phalcon\Tag::endForm() ?>

@@ -1,0 +1,55 @@
+<?php $this->getContent(); ?>
+
+<table width="100%">
+    <tr>
+        <td align="left">
+            <?php echo \Phalcon\Tag::linkTo(array("counts/index", "Go Back")); ?>
+        </td>
+        <td align="right">
+            <?php echo \Phalcon\Tag::linkTo(array("counts/new", "Create counts")); ?>
+        </td>
+    <tr>
+</table>
+
+<table class="browse" align="center">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Links</th>
+            <th>Value</th>
+            <th>Visit Of Date</th>
+            <th>Visitor Of Ip</th>
+        </tr>
+    </thead>
+    <tbody>
+    <?php
+        if(isset($page->items)){
+            foreach($page->items as $counts){ ?>
+        <tr>
+            <td><?php echo $counts->id ?></td>
+            <td><?php echo $counts->links_id ?></td>
+            <td><?php echo $counts->value ?></td>
+            <td><?php echo $counts->visit_date ?></td>
+            <td><?php echo $counts->visitor_ip ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("counts/edit/".$counts->id, "Edit")); ?></td>
+            <td><?php echo \Phalcon\Tag::linkTo(array("counts/delete/".$counts->id, "Delete")); ?></td>
+        </tr>
+    <?php }
+        } ?>
+    </tbody>
+    <tbody>
+        <tr>
+            <td colspan="5" align="right">
+                <table align="center">
+                    <tr>
+                        <td><?php echo \Phalcon\Tag::linkTo("counts/search", "First") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("counts/search?page=".$page->before, "Previous") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("counts/search?page=".$page->next, "Next") ?></td>
+                        <td><?php echo \Phalcon\Tag::linkTo("counts/search?page=".$page->last, "Last") ?></td>
+                        <td><?php echo $page->current, "/", $page->total_pages ?></td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    <tbody>
+</table>

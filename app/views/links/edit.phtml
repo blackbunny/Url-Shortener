@@ -1,0 +1,48 @@
+<?php echo $this->getContent(); ?>
+
+<?php echo \Phalcon\Tag::form("links/save") ?>
+
+<table width="100%">
+    <tr>
+        <td align="left"><?php echo \Phalcon\Tag::linkTo(array("links", "Back")) ?></td>
+        <td align="right"><?php echo \Phalcon\Tag::submitButton(array("Save")) ?></td>
+    <tr>
+</table>
+
+<div align="center">
+    <h1>Edit links</h1>
+</div>
+
+    <table align="center">
+        <tr>
+            <td align="right">
+            </td>
+            <td align="left">
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="token">Token</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("token", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="longurl">Longurl</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("longurl", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="visitor_count">Visitor Of Count</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("visitor_count", "type" => "numeric")) ?>
+            </td>
+        </tr>
+    </table>
+    <?php echo \Phalcon\Tag::endForm() ?>

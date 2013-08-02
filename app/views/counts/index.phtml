@@ -1,0 +1,56 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("counts/new", "Create Counts")) ?>
+</div>
+
+<div align="center">
+    <h1>Search counts</h1>
+    <?php echo \Phalcon\Tag::form(array("counts/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="id">Id</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="links_id">Links</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("links_id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="value">Value</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("value", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="visit_date">Visit Of Date</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("visit_date", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="visitor_ip">Visitor Of Ip</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("visitor_ip", "size" => 30)) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>

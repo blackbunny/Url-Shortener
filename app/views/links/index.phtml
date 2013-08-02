@@ -1,0 +1,48 @@
+<?php echo $this->getContent(); ?>
+<div align="right">
+    <?php echo \Phalcon\Tag::linkTo(array("links/new", "Create Links")) ?>
+</div>
+
+<div align="center">
+    <h1>Search links</h1>
+    <?php echo \Phalcon\Tag::form(array("links/search")) ?>
+    <table align="center">
+        <tr>
+            <td align="right">
+                <label for="id">Id</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("id", "type" => "numeric")) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="token">Token</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("token", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="longurl">Longurl</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("longurl", "size" => 30)) ?>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                <label for="visitor_count">Visitor Of Count</label>
+            </td>
+            <td align="left">
+            <?php echo \Phalcon\Tag::textField(array("visitor_count", "type" => "numeric")) ?>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td><td><?php echo \Phalcon\Tag::submitButton(array("Search")) ?></td>
+        </tr>
+    </table>
+</form>
+</div>
