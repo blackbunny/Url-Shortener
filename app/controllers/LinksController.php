@@ -73,7 +73,11 @@ return true;
         $slug = $this->dispatcher->getParam("slug");
         $link = Links::findFirst('token="'.$slug.'"');
         
-        $check = Counts::findFirst('visitor_ip="'.$this->getUserIP().'"');
+        //$check = Counts::findFirst('visitor_ip' => $this->getUserIP(), 'links_id' => $link->id));
+        $check = Counts::findFirst(array('visitor_ip=:visitor_ip: AND links_id=:links_id:',
+                                         'bind' => array('visitor_ip' => $this->getUserIP(), 
+                                                         'links_id' => $link->id)
+                                                ));
         if (!$check) {
             $counts = new Counts();
             $counts->links_id = $link->id;
@@ -84,12 +88,10 @@ return true;
             unset($counts);
             
             $counts_total = count(Counts::find(array("links_id" => $link->id)));
-            
-            $lastLinks = Links::findFirst(array("id" => $link->id));
-            $lastLinks->visitor_count = $counts_total;
-            $lastLinks->save();
-            
         }
+
+        $link->visitor_count = $counts_total;
+        $link->save();
         $this->view->linkurl = $link->longurl;
 
         $response = new \Phalcon\Http\Response();

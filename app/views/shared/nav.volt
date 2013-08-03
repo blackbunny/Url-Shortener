@@ -1,6 +1,7 @@
 <div class="header">
     <ul class="nav nav-pills pull-right">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="/">Anasayfa</a></li>
+        <li><a href="/">Yeni Kısaltma</a></li>
         <li><a href="#">About</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
