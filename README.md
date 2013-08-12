@@ -10,6 +10,13 @@ Please write us if you have any feedback.
 
 Thanks.
 
+Feature
+----
+* Statistics
+* User Login
+* API
+
+
 NOTE
 ----
 
