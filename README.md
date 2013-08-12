@@ -10,11 +10,12 @@ Please write us if you have any feedback.
 
 Thanks.
 
-Feature
+To-Do
 ----
 * Statistics
 * User Login
 * API
+* Password protection for shortened link
 
 
 NOTE
