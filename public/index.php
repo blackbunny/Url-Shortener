@@ -39,6 +39,27 @@ try {
             });
 
     /**
+     * Setup the translator
+     */
+    $di->set('translate',function() use($di) {
+      $dispatcher = $di->get('dispatcher');
+      $language = $dispatcher->getParam("lang");
+
+      $langDir = __DIR__.'/../app/lang/';
+      if(file_exists("{$langDir}{$language}.php")) {
+        require_once "{$langDir}{$language}.php";
+      } else {
+        require_once "{$langDir}en.php";
+      }
+
+      return new \Phalcon\translate\Adapter\NativeArray(array(
+        "content" => $messages
+      ));
+
+
+    });
+
+    /**
      * Setting up the view component
      */
     $di->set('view', function() use ($config) {
@@ -55,12 +76,15 @@ try {
                                     'compileAlways' => true
                                 )
                         );
+                        $volt->getCompiler()->addFunction('tr', function ($resolvedArgs, $exprArgs) use ($di) {
+                          return sprintf('$this->translate->query(\'%s\')', $exprArgs[0]['expr']['value']);
+                        });
                         return $volt;
                     }
                 ));
 
                 return $view;
-            });
+            }, true);
 
     //Set up the flash service
     $di->set('flash', function() {

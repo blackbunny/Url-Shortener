@@ -3,10 +3,10 @@
     <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="Url Kısaltma Servisi">
-        <meta name="author" content="Murat Küçükosman">
+        <meta name="description" content="{{tr(header_description)}}">
+        <meta name="author" content="{{tr(header_author)}}">
 
-        <title>Dolap.co Moda Arama Motoru URL Kısaltma Servisi</title>
+        <title>{{tr(header_title)}}</title>
 
         <!-- Bootstrap core CSS -->
         <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.0-rc1/css/bootstrap.min.css">
